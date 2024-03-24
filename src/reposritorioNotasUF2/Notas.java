@@ -2,8 +2,9 @@
 *@version 1.0
 *@author 27883maikel
 *@since 22/03/2024
-*/
+*/ 
 package reposritorioNotasUF2;
+
 import java.util.Scanner;
 /**
 Clase que se encarga de calcular la nota de un alumno
@@ -11,7 +12,8 @@ de si esta aprobado o no en funcion de la nota que introduzca por Scanner.
 *
 */
 public class Notas {
-		
+	
+	
 /**
 uf1 Gurdara la nota de la UF1 que introduzca el usuario
 uf2 Gurdara la nota de la UF2 que introduzca el usuario
@@ -22,8 +24,6 @@ acu3 Guardara el calculo de la UF3 que haga en su correspondinte metodo
 def Sera la encargada de guardar la suma de los calculos acu1+acu2+acu3
 **/
 double uf1, uf2, uf3,acu1, acu2, acu3, def;
-
-
 
 /**
 Se instancia la clase de Scanner y se crea un nombre
@@ -38,23 +38,16 @@ Scanner entrada = new Scanner(System.in);
 Esas notas se gaurdan en unas varibles uf1, uf2,uf3.
 */
 public void IngresaNotas() {
-System.out.println("ingrese las notas del estudiante");
+ System.out.println("ingrese las notas del estudiante");
 
 System.out.print("ingrese nota 1: ");
-
-uf1= entrada.nextDouble();
-
-
+ uf1= entrada.nextDouble();
 
 System.out.print("ingrese nota 2: ");
-
-uf2= entrada.nextDouble();
+ uf2= entrada.nextDouble();
 
 System.out.print("ingrese nota 3: ");
-
-uf3= entrada.nextDouble();
-
-
+ uf3= entrada.nextDouble();
 }
 
 /**
@@ -74,27 +67,24 @@ devolvera un mensaje con un mensaje de que la nota esta mal introducida.
 public void comprobarcion(){
 
 if (uf1 > 10) {
-System.out.println(" nota1 mal introducida");
+ System.out.println(" nota1 mal introducida");
 
 }else {
-System.out.println(" nota1 correcta");
+ System.out.println(" nota1 correcta");
 }
 
 if (uf2 > 10) {
-System.out.println(" nota2 mal introducida");
+ System.out.println(" nota2 mal introducida");
 
 }else {
-System.out.println(" nota2 correcta");
+ System.out.println(" nota2 correcta");
 }
 if (uf3 > 10) {
-System.out.println(" nota3 mal introducida");
+ System.out.println(" nota3 mal introducida");
 
 }else {
-System.out.println(" nota3 correcta");
+ System.out.println(" nota3 correcta");
 }
-
-
-
 
 }
 /**
@@ -112,12 +102,13 @@ de las notas, con unas ecuaciones predeterminadas:
 *En este momento solo tenemos el calculo realizado pero no lo mostramos.
 */
 public void Calculonotas() {
-acu1 = uf1 * 0.35;
-acu2 = uf2 * 0.35;
-acu3 = uf3 * 0.30;
+ acu1 = uf1 * 0.35;
+ acu2 = uf2 * 0.35;
+ acu3 = uf3 * 0.30;
 
-def = acu1 + acu2 + acu3;
+ def = acu1 + acu2 + acu3;
 }
+
 /**
 @param  Mostrar Parametro encargado de mostrar los resultados calculados por
 el metodo @param Calculonotas.
@@ -136,7 +127,6 @@ System.out.println(" acumuado 2 = " + acu2);
 System.out.println(" acumuado 3 = " + acu3);
 
 System.out.println(" nota definitiva es = "+ def);
-
 }
 
 /**
@@ -153,14 +143,14 @@ De lo contrario el alumno aprobara la asignatura.
 public void aprobado() {
 
 if(def < 5 && def >= 0) {
-System.out.println("suspendio");
+ System.out.println("suspendio");
 }else {
-if (def >= 5 && def <= 10 ) {
+ if (def >= 5 && def <= 10 ) {
 System.out.println("aprobado");
 }else {
-System.out.println(" error en la notas");
-}
-}
+ System.out.println(" error en la notas");
+  }
+ }
 }
 
 /**
@@ -177,21 +167,20 @@ public static void main(String[] args) {
 *aprobado
 Y muchos metodos mas que se creen fuera.
 */
-Notas fc = new Notas();
+ Notas fc = new Notas();
 
-fc.IngresaNotas();
+  fc.IngresaNotas();
 
-fc.comprobarcion();
+  fc.comprobarcion();
 
+  fc.Calculonotas();
 
-fc.Calculonotas();
+  fc.Mostrar();
 
-fc.Mostrar();
+  fc.aprobado();
 
-fc.aprobado();
-
+  }
 }
-   }
 
 
 
