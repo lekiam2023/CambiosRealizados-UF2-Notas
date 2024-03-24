@@ -30,24 +30,23 @@ Se instancia la clase de Scanner y se crea un nombre
 (entrada).
 Sera utilizado para recibir lo que el usuario introduzca
 */
-Scanner entrada = new Scanner(System.in);
-
+Scanner cs = new Scanner(System.in);
 
 /**
 @param IngresaNotas parametro que recibe las notas introducidas por el usuario
 Esas notas se gaurdan en unas varibles uf1, uf2,uf3.
 */
 public void IngresaNotas() {
- System.out.println("ingrese las notas del estudiante");
+System.out.println("ingrese las notas del estudiante");
 
 System.out.print("ingrese nota 1: ");
- uf1= entrada.nextDouble();
+ uf1 = cs.nextDouble();
 
 System.out.print("ingrese nota 2: ");
- uf2= entrada.nextDouble();
+ uf2 = cs.nextDouble();
 
 System.out.print("ingrese nota 3: ");
- uf3= entrada.nextDouble();
+ uf3 = cs.nextDouble();
 }
 
 /**
@@ -122,7 +121,7 @@ System.out.println(" nota1 = " + uf1);
 System.out.println(" nota2 = " + uf2);
 System.out.println(" nota3 = " + uf3);
 
-System.out.println(" acumuado 1 = " + acu1);
+System.out.println(" acumuado 1 = " + acu1); 
 System.out.println(" acumuado 2 = " + acu2);
 System.out.println(" acumuado 3 = " + acu3);
 
