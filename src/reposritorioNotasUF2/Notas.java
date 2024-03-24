@@ -21,8 +21,8 @@ acu2 Guardara el calculo de la UF2 que haga en su correspondinte metodo
 acu3 Guardara el calculo de la UF3 que haga en su correspondinte metodo
 def Sera la encargada de guardar la suma de los calculos acu1+acu2+acu3
 **/
-double uf1, uf2, uf3;
-double acu1, acu2, acu3, def;
+double uf1, uf2, uf3,acu1, acu2, acu3, def;
+
 
 
 /**
