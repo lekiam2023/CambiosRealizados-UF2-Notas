@@ -49,6 +49,7 @@ uf1= entrada.nextDouble();
 System.out.print("ingrese nota 2: ");
 
 uf2= entrada.nextDouble();
+
 System.out.print("ingrese nota 3: ");
 
 uf3= entrada.nextDouble();
@@ -72,20 +73,20 @@ devolvera un mensaje con un mensaje de que la nota esta mal introducida.
 
 public void comprobarcion(){
 
-if (uf1>10) {
+if (uf1 > 10) {
 System.out.println(" nota1 mal introducida");
 
 }else {
 System.out.println(" nota1 correcta");
 }
 
-if (uf2>10) {
+if (uf2 > 10) {
 System.out.println(" nota2 mal introducida");
 
 }else {
 System.out.println(" nota2 correcta");
 }
-if (uf3>10) {
+if (uf3 > 10) {
 System.out.println(" nota3 mal introducida");
 
 }else {
@@ -111,11 +112,11 @@ de las notas, con unas ecuaciones predeterminadas:
 *En este momento solo tenemos el calculo realizado pero no lo mostramos.
 */
 public void Calculonotas() {
-acu1= uf1*0.35;
+acu1 = uf1 * 0.35;
 acu2 = uf2 * 0.35;
 acu3 = uf3 * 0.30;
 
-def = acu1 + acu2+ acu3;
+def = acu1 + acu2 + acu3;
 }
 /**
 @param  Mostrar Parametro encargado de mostrar los resultados calculados por
@@ -130,9 +131,9 @@ System.out.println(" nota1 = " + uf1);
 System.out.println(" nota2 = " + uf2);
 System.out.println(" nota3 = " + uf3);
 
-System.out.println(" acumuado 1 = "+ acu1);
-System.out.println(" acumuado 2 = "+ acu2);
-System.out.println(" acumuado 3 = "+ acu3);
+System.out.println(" acumuado 1 = " + acu1);
+System.out.println(" acumuado 2 = " + acu2);
+System.out.println(" acumuado 3 = " + acu3);
 
 System.out.println(" nota definitiva es = "+ def);
 
@@ -151,10 +152,10 @@ De lo contrario el alumno aprobara la asignatura.
 */
 public void aprobado() {
 
-if(def<5 && def>=0) {
+if(def < 5 && def >= 0) {
 System.out.println("suspendio");
 }else {
-if (def>=5 && def<=10 ) {
+if (def >= 5 && def <= 10 ) {
 System.out.println("aprobado");
 }else {
 System.out.println(" error en la notas");
@@ -176,7 +177,7 @@ public static void main(String[] args) {
 *aprobado
 Y muchos metodos mas que se creen fuera.
 */
-Notas fc= new Notas();
+Notas fc = new Notas();
 
 fc.IngresaNotas();
 
