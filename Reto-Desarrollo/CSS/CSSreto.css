@@ -31,7 +31,7 @@ y del boton*/
 #modelBoxb{
       width:50%;
       height:55%;
-      background-color: white;
+      background-color: black;/*Cambio realizado para subirlo al repositorio*/
       position: absolute;
       top: 28%;
       left: 25%;
