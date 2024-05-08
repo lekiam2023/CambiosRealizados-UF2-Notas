@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperClean</title>
+    <link rel="stylesheet" href="CSS/CSSreto.css">
+
+
+
+    <!--Link de funte de Google Fonts-->
+
+    <!--Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" >
+
+   <!--Int Bol-->
+   <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900 &display=intercambiar" rel="hoja de estilo">
+
+    <!--Roboto mas fina-->
+   <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500 ;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="hoja de estilo">
+
+   <!--Fin de link de Google Fonts-->
+
+
+    <!--Link de iconos del carrusel de imagenes-->
+    <script src="https://kit.fontawesome.com/75c1e912d7.js" crossorigin="anonymous"></script>
+
+
+
+    <!--Link externo de donde sacaremos la animacion de la bibleoteca AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+     
+
+
+    <!--Precarga de imagenes
+    Aca lo que hacemos es precargar las imagenes para que desde un inicio no 
+    nos salga el flass de efecto en la pantalla al cambiar la imagen en el slideshow-->
+    <link rel="preload" as="image" href="media/HeroImageSuperClean.png">
+    <link rel="preload" as="image" href="media/HeroImageSuperClean2.jpg">
+    <link rel="preload" as="image" href="media/HeroImageSuperClean3.jpg">
+    <!--Fin de precargas de imagnes -->
+
+
+  </head>
+  <body>
+      <!--Comienzo de modal de bienvenida -->
+     <div id="modalBienvenida">
+        <div id="modelBoxb">
+            <h1>Bienvenido a la Web Super Clean</h1>
+            <button onclick=" cerrarMBB()">Empieza</button>
+        </div>
+     </div>
+
+ <!--Encabezado-->
+ <header id="encabezado" >
+        <!--Contendores de fondo para las imagenes-->
+         <div class="fondosHero " id="fondoHero1"></div>
+         <div class="fondosHero" id="fondoHero2"></div>
+         <div class="fondosHero " id="fondoHero3"></div>
+
+        <!--Navegador Horizontal-->
+       <!--Etiqueta nav que sera el contenedor de las opcines del menu-->
+    <nav id="contenedorOpcionesMenu">
+       <div id="contenedorLogo">
+         <a href="">
+           <img src="media/Logo-SuperClean.png" alt="" >
+         </a>
+        </div>
+
+       <!--Comienzo de Menu y subMenu-->
+        <ul id="menu">
+            <li class="elementosMenu"><a href="#encabezado">Inicio</a></li>
+            <li class="elementosMenu"><a href="#servicio">Servicio</a></li>
+            <li class="elementosMenu"><a href="#logros">Logros</a></li><!--Se crea un subMenu en la seccion de logros-->
+
+             <!--SubMenu que se desplega cuando seleccionamos el aparatado de Logros en el menu-->
+            <ul id="submenu">
+              <!--Esta referenciado a la seccion de logros, tambien tiene un evento onclick para que cuando se clique en-->
+              <li class="elementoSubmenu"><a href="#logros" onclick="marcarPestana('Logro1', 'tabPintura')">Pintura</a></li>
+                <li class="elementoSubmenu"><a href="#logros" onclick="marcarPestana('Logro2', 'tabLimpieza')">Limpieza</a></li>
+                <li class="elementoSubmenu"><a href="#logros" onclick="marcarPestana('Logro3', 'tabCostura')">Costura</a></li>
+              <li class="elementoSubmenu"><a href="#logros" onclick="marcarPestana('Logro4', 'tabProductos')">Productos</a></li>
+            </ul>
+            <li class="elementosMenu"><a href="#galeria">Galeria</a></li>
+            <li class="elementosMenu"><a href="#nosotros">Nosotros</a></li>
+            <li class="elementosMenu"><a href="#encuentranos">Contacto</a></li>
+        </ul>
+        <!--Fin de Menu y subMenu -->
+    </nav>  
+        <!--Titulo y subtitulo-->
+       <h1 id="tituloEncabezado">Super Clean</h1>
+       <h2 id="subtituloEncabezado">Especialistas en reparaciones de zapatillas deportivas de alta calidad</h2>
+
+     <!--Contenedor de tipo header que contendra los logos de redes sociales -->
+    <nav id="redesSociales" data-aos="flip-up">
+     <a id="redes" href="https://www.instagram.com/"><img src="media/Instagram.png"  alt=""></a>
+       <a href="https://www.facebook.com/"><img src="media/facebook.png" id="redes" alt=""></a>
+       <a href="https://twitter.com/">
+     <img src="media/twiter.png" id="redes" alt=""></a>
+    </nav>
+ </header>
+ <!--Fin Encabezado-->
+    
+        
+ <section class="parallax" data-parallax="scroll" data-image-src="media/FondoParallax2.jpg"></section>    
+ <!--Servicio-->
+<section id="servicio">
+      <!--Titulo principal con una class que da formato a los titulos-->
+      <h2 class="titulosPrincipales"  data-aos="fade-up" >Servicio</h2>
+      <!--Contenedor que contendra todas las demas culumnas-->
+    <div id="contenedorServicio">
+
+       <!--Apartado de Lavado-->
+        <!--Primera columna verticales de servicio de Lavado-->
+        <div class="columnaServicio">
+          <!--Contenedor de logos.Preparado para la UF2 -->
+           <div class="contenedorLogos" data-aos="flip-up">
+
+              <!---->
+             <img  class="filtro1" src="media/Lavado.jpg" alt="">
+
+           </div>
+            <!--Creamos un contenedor para el subtitulo descriptivo-->
+            <div class="contenedorTexto">
+              <h1 class="subTitulosServ" data-aos="flip-up">Lavado</h1>
+               <h3 class="fuenteDescrip" data-aos="flip-up">Lavado de bambas con productos de alta calidad, que garantizan el cuidado de la piel del zapato, y del hilo de costura.
+              </h3>
+            </div>
+        </div>
+         <!--Fin de Apartado de Lavado-->
+
+         <!--Apartado de Pintura-->
+          <!--Asignamos la clase la cual tendra el fecto de filtro sobre la imagen-->
+          <div class="columnaServicio">
+
+            <!--Asignamos la clase la cual tendra el fecto de filtro sobre la imagen-->
+            <div class="contenedorLogos" data-aos="flip-up"><img  class="filtro2" src="media/Pintura.jpg" alt=""> </div><!--En la segunda UF se metera imagenes--> 
+
+             <div class="contenedorTexto"><!--Creamos un contenedor para el subtitulo descriptivo-->
+               <h1 class="subTitulosServ" data-aos="flip-up">Pintura</h1>
+                <h3 class="fuenteDescrip" data-aos="flip-up"> Tratamos con pintura esas imperfecciones por el uso del día a día de tus zapatos, utilizamos pinturas de larga duración.</h3>
+             </div>
+          </div>
+          <!--Fin de Apartado de Pintura-->
+
+        <!--Apartado de Costura-->
+        <div class="columnaServicio"><!--Tercera columna de servicio de Costura-->
+
+               <!--Asignamos la clase la cual tendra el fecto de filtro sobre la imagen-->
+            <div class="contenedorLogos" data-aos="flip-up"><img  class="filtro3" src="media/Costuras-.jpg" alt=""> 
+
+            </div>
+                <div class="contenedorTexto" ><!--Creamos un contenedor para el subtitulo descriptivo-->
+                <h1 class="subTitulosServ" data-aos="flip-up">Costura</h1><!--Titulo de servicio con una class que referencia al css y que dara formato y tamaño-->
+                <h3 class="fuenteDescrip" data-aos="flip-up">Tenemos la mejor mano de obra en lo que respecta a  la costura de las bambas, corregimos huecos o renovamos costura.
+                </h3>
+            </div>
+        </div> 
+        <!--Fin de Apartado de Costura--> 
+    </div> 
+</section>
+<section class="parallax" data-parallax="scroll" data-image-src="media/FondoParallax.png"></section>
+<!--Fin de servicio-->
+
+
+<!--Logros-->
+<section id="logros">
+    <!--Titulo principal que se agregara a las demas secciones-->
+    <h2 class="titulosPrincipales" data-aos="fade-up">Logros</h2>
+    <!--Subtitulo descriptivo de la seccion de Logros-->       
+    <h2 class="subtituloLogros" data-aos="fade-up" >Una coleccion de bambas renovadas con pasíon</h2>
+
+    <!--Contenedor de pestañas que te llevaran a las imagenes de los logros-->
+    <div id="contenedorEtiquetasPestanas">
+          <!--De momento no tienen una direccion asignada-->
+          <p id="tabPintura" class="pestanas pestanaActiva " onclick="marcarPestana('Logro1', 'tabPintura')">Pintura</p>
+          <p id="tabLimpieza" class="pestanas" onclick="marcarPestana('Logro2' , 'tabLimpieza')">Limpieza</p>
+          <p id="tabCostura" class="pestanas" onclick="marcarPestana('Logro3' , 'tabCostura')">Costura</p>
+          <p id="tabProductos" class="pestanas" onclick="marcarPestana('Logro4' , 'tabProductos')">Productos</p>
+    </div>
+
+    
+      <!--Primer logro-->
+
+        <!--Pestaña de contenedor de Pintura-->
+    <div class="contenedorPestanas" id="Logro1" data-aos="fade-up">
+        <div class="contenedorImg ">
+            <h2 class="titulosPestanas">Pintura</h2>
+
+            <img id="ContenedorPintura" src="media/Pintura1.jpg" alt="">
+
+        </div>
+
+        <div class="contenedorImg ">
+            <h2 class="titulosPestanas">Pintura</h2>
+
+          <img id="ContenedorPintura" src="media/Pintura2.jpg" alt="">
+
+        </div> 
+         
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Pintura</h2>
+
+          <img id="ContenedorPintura" src="media/Pintura3.jpg" alt="">
+
+        </div>
+
+        <div class="contenedorImg ">
+            <h2 class="titulosPestanas">Pintura</h2>
+
+          <img id="ContenedorPintura" src="media/Pintura4.jpg" alt="">
+
+        </div>
+    </div>
+
+
+     <!--Segundo logro-->
+
+     <!--Pestaña de contenedor de Limpieza-->
+    <div class="contenedorPestanas" id="Logro2" data-aos="fade-up">
+        <!--Contenedor de imagen que tendra un titulo descriptivo dentro-->
+        <div class="contenedorImg ">
+            <h2 class="titulosPestanas">Limpieza</h2>
+           <img id="ContenedorPintura" src="media/limpieza1.jpg" alt="">
+        </div>
+         
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Limpieza </h2>
+          <img id="ContenedorPintura" src="media/limpieza2.jpg" alt="">
+        </div>
+  
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Limpieza</h2>
+          <img id="ContenedorPintura" src="media/limpieza3.jpg" alt="">
+        </div>
+        
+        <div class="contenedorImg ">
+            <h2 class="titulosPestanas">Limpieza</h2>
+          <img id="ContenedorPintura" src="media/limpieza4.jpg" alt="">
+        </div>
+    </div>
+
+      
+     <!--Tercer logro-->
+
+      <!--Pestaña de contenedor de Costura-->
+    <div class="contenedorPestanas" id="Logro3" data-aos="fade-up">
+        <!--Contenedor de imagen que tendra un titulo descriptivo dentro-->
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Costura</h2>
+           <img id="ContenedorPintura" src="media/costura1.jpg" alt="">
+        </div>
+       
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Costura </h2>
+          <img id="ContenedorPintura" src="media/costura2.jpg" alt="">
+        </div>
+            
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Costura</h2>
+          <img id="ContenedorPintura" src="media/costura3.jpg" alt="">
+        </div>
+        
+        <div class="contenedorImg">
+           <h2 class="titulosPestanas">Costura</h2>
+          <img id="ContenedorPintura" src="media/costura4.jpg" alt="">
+        </div>
+    </div>
+
+     <!--Cuarto logro-->
+
+    <div class="contenedorPestanas" id="Logro4" data-aos="fade-up">
+        <!--Contenedor de imagen que tendra un titulo descriptivo dentro-->
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Productos</h2>
+           <img id="ContenedorPintura" src="media/productos1.jpg" alt="">
+        </div>
+          
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Productos</h2>
+          <img id="ContenedorPintura" src="media/productos2.jpg" alt="">
+        </div>
+            
+        <div class="contenedorImg ">
+           <h2 class="titulosPestanas">Productos</h2>
+          <img id="ContenedorPintura" src="media/productos3.jpg" alt="">
+        </div>
+        
+        <div class="contenedorImg">
+           <h2 class="titulosPestanas">Productos</h2>
+          <img id="ContenedorPintura" src="media/productos4.jpg" alt="">
+        </div>
+    </div>
+</section>
+<!--Fin de de logros --->
+
+ <section class="parallax" data-parallax="scroll" data-image-src="media/FondoParallax3.avif"></section>    
+
+<!--Nosotros --->
+
+ <!--Contenedor general de nosotros  que contendra todas las columnas-->
+<section id="nosotros" >
+    <!--Titulo principal de seccion-->
+    <h2 class="titulosPrincipales" data-aos="fade-up">Nosotros</h2>
+
+      <!--Contenedor que tiene dentro a otro contenedor que es donde esta la info de nosotros-->    
+         <!--Contenedor del video
+            que estara incrustado gracias al elemento iframe-->
+    <div id="contenedorDescripcion" data-aos="fade-up">
+        <div id="conteneVideo">
+            <iframe i class="videoIframe" width="560" height="315" src="https://www.youtube.com/embed/SRCOazNKltM?si=t-mCt5hvpiNcIt3D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+         <!--Contenedor que contiene el parrafo descriptivo-->
+        <div id="subcontenedorTexto">  
+          <p class="fuenteTexNosotros">
+            Somos una empresa comprometida con el trabajo de calidad, nos dedicamos al tratamiento de cuidado de bambas de alta calidad, tenemos una pasión y un compromiso con los resultados de calidad.  Enfocamos nuestros conocimientos de costura y limpieza en los mejores materiales de zapatos de alto valor.  Siempre cuidamos que los zapatos que tratamos no corran ningún riesgo de daño y te garantizamos una experiencia inolvidable por nuestros profesionales encargados.
+          </p>
+        </div>
+    </div>
+</section>
+<!--Fin de Nosotros --->
+ 
+
+
+ <!--Galeria-->
+
+<section id="galeria">
+       <h2 class="titulosPrincipales" data-aos="fade-up">Galeria</h2>
+       <div id="contenedorGaleria">
+             <!--Agregamos animaciones de la bibleoteca AOS de tipo flip de delay y zoom-in-down-->
+             <img class="conteImg" src="media/FotoGaleria1.jpg" data-aos="flip-left"  data-aos-delay="100" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria2.jpg" data-aos="flip-left"  data-aos-delay="200" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria3.jpg" data-aos="flip-left"  data-aos-delay="300" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria4.jpg" data-aos="flip-left"  data-aos-delay="400" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria5.jpg" data-aos="flip-left"  data-aos-delay="200" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria6.jpg" data-aos="flip-left"  data-aos-delay="300" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria7.jpg" data-aos="flip-left"  data-aos-delay="400" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria8.jpg" data-aos="flip-left"  data-aos-delay="100" data-aos="zoom-in-down">
+
+             <img class="conteImg" src="media/FotoGaleria9.jpg" data-aos="flip-left"  data-aos-delay="400" data-aos="zoom-in-down">
+     </div>
+
+        <!--Comienzo de modal de Galeria -->
+        <div id="modalLightboxGale">
+             <!--Contenedor de modal-->
+            <div id="imageToShow"></div>
+
+             <!--Boton derecho-->
+            <button class="lbButtons lbbright" onclick="nextImgGaleria()">
+             <i class="fa-solid fa-angle-right"></i>
+            </button>
+
+             <!--Boton Izquierdo-->
+            <button class="lbButtons lbbleft" onclick="prevImgGaleria()">
+             <i class="fa-solid fa-angle-left"></i>
+            </button>
+        </div>
+        <!--Final de modal de Galeria -->
+</section>
+
+<!---Final de galeria-->
+
+
+
+ <!--Encuentranos--->
+<section id="encuentranos">
+
+<!--Contenedor donde estara el acordeon-->
+<div id="contAcordeon">
+  <h1 class="tituloAcordeon">Preguntas Frecuentes</h1>
+
+
+  <!--Aca comienza el acordeon-->
+     <!--Botones que se activaran mediante un evento onclik al clicarlos-->
+  <button class="BonotesActivos">¿Con que pintura trabajan?</button>
+  <div class="panel">
+      
+     <p class="contenido">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum recusandae veniam, cum numquam quos temporibus voluptates odit libero reprehenderit vel fugiat ad officiis minima obcaecati similique animi neque voluptas repellendus!
+
+     </p>
+
+  </div>
+     <!--Botones que se activaran mediante un evento onclik al clicarlos-->
+  <button class="BonotesActivos">¿Venden bambas?</button>
+<div class="panel">
+    
+     <p class="contenido">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ad quas consectetur commodi beatae, voluptas quis, aut? Neque, adipisci pariatur sunt illum, suscipit natus doloremque? Ipsum, suscipit minus at saepe.
+
+     </p>
+
+</div>
+       <!--Botones que se activaran mediante un evento onclik al clicarlos--> 
+  <button class="BonotesActivos">¿Tienen tienda fisica?</button>
+<div class="panel">
+    
+     <p class="contenido">
+         Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ratione natus laboriosam accusantium aspernatur eligendi sit, quidem sapiente ducimus, molestiae sint. Nihil, aliquid neque facere et quisquam distinctio tenetur illum, voluptatem?
+
+     </p>
+
+</div>
+
+
+    <!---->
+  <button class="BonotesActivos">¿Cuanto se tardan en reparar?</button>
+<div class="panel">
+    
+     <p class="contenido">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, veniam, magni similique perspiciatis ipsam ipsa vel, quasi veritatis ullam vitae error quisquam. Corrupti explicabo mollitia adipisci odio earum minima nemo.
+
+     </p>
+
+</div>
+
+<!--Aca Finaliza el acordeon-->
+
+    
+</div>
+
+    <div id="contenedorCulumnas">
+         <h2 class="titulosPrincipales" data-aos="fade-up">Encuentranos</h2>
+         <!--Contenedor que contendra elementos de tipo formularios-->
+
+        <form id="contenedorFormulario" action="#">
+            <!--primera parte del formulario que recibe un texto como nombre-->
+            <h3  class=" nombresForm">Nombre
+
+                <div class="detallesCamp">
+                    <h2>Introduzca el nombre</h2>
+                    <p>Introduzca sus (Nombres) en el caso de que tenga dos</p>
+                </div>
+
+            </h3>
+
+            <input  id="formNombre" type="text" name="Nombre" placeholder="Nombres" required>
+
+            <!--Segunda parte del formulario que recibe un texto como apellidos-->
+            <h3  class="nombresForm">Apellidos
+                   <!--Agregamos las clases que se utilizaran para el toltip-->
+                <div class="detallesCamp">
+                    <h2>Introduzca los Apellidos</h2>
+                    <p>Introduzca sus dos (apellidos) en el caso de que los tenga</p>
+                </div>
+
+            </h3>
+
+            <input id="formApellido" type="text" name="Apellidos" placeholder="Apellidos" required >
+
+            <!--Tercera parte del formulario que recibe un Email, si no se introduce dara un aviso-->
+            <h3 class="nombresForm">Email*
+                   <!--Agregamos las clases que se utilizaran para el toltip-->
+                <div class="detallesCamp">
+                    <h2>Introduz CorreoElectronico</h2>
+                    <p>Introduzca un Gmail con el @</p>
+                </div>
+
+                            
+
+            </h3>
+
+            <input id="formEmail" type="Email"id="apartadosForm" name="email" placeholder="Correo electronico" required>
+
+            <!--Cuarta parte del formulario que recibe un texto como  concepto mensaje-->
+            <h3  class="nombresForm">Asunto
+                   <!--Agregamos las clases que se utilizaran para el toltip-->
+                 <div class="detallesCamp">
+                    <h2>Asunto de consulta</h2>
+                    <p>Costura de bambas</p>
+                </div>
+
+            </h3>
+
+            <input id="formAsunto" type="text" id="apartadosForm" name="mensaje"placeholder="Concepto Mensaje" required>
+            <!--Quinto apartado que recibe texto para escribir, expliacr lo que quiere el cliente-->
+                  <!--Agregamos las clases que se utilizaran para el toltip-->
+            <h3  class="nombresForm">Descripcion
+                  <div class="detallesCamp">
+                    <h2>Escriba su consulta</h2>
+                    <p>Ej: reparan bambas deportivas de alta gama?</p>
+                </div>
+            </h3>
+
+            <!--primera parte del formulario que recibe un texto-->
+            <textarea id="formDescripcion" name="mensaje" id="apartadosForm"  rows="10" cols="41" required> </textarea> 
+
+            <input  id="apartadosForm" onclick="modalReserva()" value="Enviar" type="button" >
+        </form>
+
+        <!--Contenedor izquierdo que contiene la informacion del negocio-->
+        <div id="contenedorInfo"  >
+             <h3 "infoTienda">info@misitio.com</h3>
+             <h3 class="infoTienda">Tel: 914-123-456</h3>
+             <h3 class="infoTienda">Horarios</h3>
+             <h3 class="infoTienda">Lun- Vie: 7am - 10pm Sábado: 8am - 10pm Domingo: 8am - 11pm</h3>
+        </div>
+    </div>
+</section>
+<!--Fin de Encuentranos --->
+
+
+ <!--Comienzo de modal de Formulario -->
+<div id="modalEncuentranos">
+    <div id="modelBoxR">
+        <h1>Mensaje de confirmacion de la consulta</h1>
+        <p id="mensajeRespuesta"></p>
+        <button onclick="cerrarMBR()">Aceptar</button>
+    </div>
+</div>
+<!--Final de modal de Formulario -->
+  
+
+
+ <!--Footer --->
+ <!--Contenedor de tipo footer que contiene los iconos de redes sociales -->
+<footer id="pie">
+    <div id="redesSociales" data-aos="flip-up">
+        <a href="https://www.instagram.com/"><img src="media/Instagram.png" id="redes" alt=""></a>
+        <a href="https://www.facebook.com"><img src="media/facebook.png" id="redes" alt=""></a>
+        <a href="https://twitter.com/"><img src="media/twiter.png" id="redes" alt=""></a>
+    </div>
+
+    <div id="contenedorTexto">
+      <a  href="#encabezado"  target="blank"><h3>&copy; Maikel Lopez</h3></a>
+    </div>
+</footer>
+ <!--Fin de Footer --->
+
+     
+<!--Comienzo de Script ---> 
+
+
+
+           <script>
+         /* Modal de bienvenida
+            modalBienvenida();
+                          */
+       </script>
+
+
+
+    <!--Script de inicializacion de la Animacion por libreria AOS --->
+     <script>AOS.init();</script>
+
+
+
+<!--Script de parallax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="parallax.js"></script>
+
+
+
+
+    <!--Direccion de mi documento JS-->
+  <script src="js/JS.js"> </script>
+
+
+
+<script type="text/javascript">
+
+
+ /*Llamamos a la fucnion que se encarga de cambiar las imagenes segun el numero de indice y del bucle que lo ejecuta, se estara ejecutando mediante una medida de tiempo llamada setInterval durante cada 3s*/
+    setInterval(slideShowAnim,3000);
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+     /*Instancia de funcion que llama a la apertura de la imagen clicada*/
+      readyLightbox();
+
+
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+   
+    <!--Fin del Script ---> 
+  </body>
+
+</html>
+

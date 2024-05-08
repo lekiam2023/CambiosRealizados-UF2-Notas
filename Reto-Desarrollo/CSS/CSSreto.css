@@ -1,0 +1,1079 @@
+/*Rset
+Que nos ayuda a que el margin y el padding que ya vienen
+con unas medidas por defectos, se queden a 0
+y  la propiedad Box-sizing: border-box lo que hace es que 
+cunado añadamos padding no modifique el ancho ni la altura 
+en el navegador web.
+*/
+*{
+      margin: 0;
+      padding: 0;
+	 box-sizing:border-box;
+}
+
+
+}
+/*Comienzo de modal de bienvenida
+con una propiedad por unidad de ancho
+y largo de 100%de la pantalla
+*/
+#modalBienvenida{
+      height: 100vh;
+      width: 100vw;
+      background-color: rgb(0, 0, 0, 0.7);
+      position: fixed;
+      display: none;
+      z-index: 5;
+}
+
+/*Contenedor de el anucnio de bienvenida 
+y del boton*/
+#modelBoxb{
+      width:50%;
+      height:55%;
+      background-color: white;
+      position: absolute;
+      top: 28%;
+      left: 25%;
+      transform: translate(-1%,-1%);
+      padding: 4%;
+      text-align: center;
+      border-radius: 6%;
+}
+
+/*Le damos formato al h1 del titulo del modal*/
+#modelBoxb>h1{
+      font-size: 5rem;
+      font-family: 'initial;', sans-serif;
+      font-weight: normal;
+      margin-bottom: 8%;
+}
+
+/*Le damos medidas y formatos al boton
+de el modal*/
+#modelBoxb> button{
+      font-family: 'initial;', sans-serif;
+      font-size: 3rem;
+      padding: 2%  3%;
+      background-color:  black;
+      border-radius: 14%;
+      color: #ffff;
+}
+
+/*Le hacemos un efecto de hover sobre el boton
+del modal*/
+#modelBoxb> button:hover{
+      color: #ffff;
+      background-color: #1CE5F2;
+}
+
+/*Aca comienza el SlideShow*/
+#encabezado{
+      height: 918px;
+      width: 100%; 
+
+} 
+
+/*Contenedor que comparten las tres imagenes con esta Class */
+.fondosHero{
+      height: 918px;
+      width: 100%;
+      background-size:cover;
+      position: absolute;
+}
+
+/*ID unico que solo tiene la imagen 1 en el contenedor*/
+#fondoHero1{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)),url(../media/HeroImageSuperClean.png);
+      z-index: 3;
+}
+
+/*ID unico que tiene este contenedor para la imagen 2*/
+#fondoHero2{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)),url(../media/HeroImageSuperClean2.jpg);
+      z-index: 2;
+}
+
+/*ID unico que tiene este otro contenedor para la imagen 3*/
+#fondoHero3{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)),url(../media/HeroImageSuperClean3.jpg);
+      z-index: 1;
+}
+
+/*hacemos que desaparezca el scroll en horizontal*/
+body {
+      overflow-x: hidden;
+}
+
+/*Class que tiene la animacion aplicada de que cuando una imagen pase por ella pase de 
+estar en el centro a la izquierda del todo.*/
+.mainSlide{
+      animation-name: mainSlideAnim;
+      animation-iteration-count: 1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+}
+
+/*Class que tiene aplicada la animacion de que cuando una imagen entre en ella
+se pase de la derecha del todo hacia el centro.*/
+.nextSlide{
+      animation-name: nextSlideAnim;
+      animation-iteration-count: 1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+}
+
+/*Class que controla que la imagen que entre en ella se escondera*/
+.hiddenSlide{
+      display: none;
+}
+
+
+/*Comienzo de las animaciones del SlideShow*/
+
+/*Animacion encargada de que la imagen del centro pase a la izquierda del todo*/
+@keyframes mainSlideAnim{
+      0%{margin-left: 0%;}
+      100%{margin-left: -100%;}
+}
+
+/*Animacion encargada de que la imagen que esta en la derecha del todo pase al medio */
+@keyframes nextSlideAnim{
+      0%{margin-left: 100%;}
+      100%{margin-left: 0%;}
+}
+
+/*Fin de animaciones de SlideShow*/
+
+ /*Aca  Finaliza el SlideShow*/
+
+
+/*Div que contine los elementos del menu*/
+#contenedorOpcionesMenu{
+      width: 1920px;
+      font-size: 2rem;/*Cambiamos el formato de los titulos de el menu hasta esta seccion del css, para luego hacer uso en una funcion */
+      background-color: rgb(50, 50, 50, 0.75);
+      position: fixed;
+      top: 0;
+      transition-property: top, height;/*Agregamos una transicion a la propiedad top para que se escoda el menu con mas suavidad*/
+      transition-duration: 0.79s;/*Le ponemos una duracion en esconderse de 0.75s*/
+      z-index: 6;     
+}
+
+/*Hacemos referencia al padre y cogemos sus medidas de forma relativa
+Tambien hay que observar que estamos haciendo un diseño liquido, responsive
+que se adapte al tamaño de su contenedor al cambiar de tamaños*/
+#contenedorLogo{
+      height: 100%;
+      width: auto;
+      margin-top:0;
+      overflow: hidden;
+      margin-left: 2%;
+      margin-right: 70%;
+}
+
+/*Le damos medidas a las imagenes*/
+#contenedorLogo img{
+      width: auto;
+      height: 100%;
+}
+
+/*Contenedor de tipo Ul que contiene las opcines del menu*/
+#menu {
+      width: 50%;
+      height: 55%;
+      overflow: hidden;
+      float: left;
+      margin-top: -2.50%;
+      margin-left: 40%;
+}
+
+/*Contenido de las opciones de menu*/
+.elementosMenu {
+      overflow: hidden;
+      float: left;
+      margin: 3px 26px;
+      line-height: 30px;
+}
+
+/*Comienzo de Submenu*/
+
+/*Submenu con sus medidas y implementaciones de 
+escoderlo con el (display: none) y 
+(z-index) para sacarlo el flow*/
+#submenu{
+      width:auto;
+      height:187px;
+      list-style: none;
+      position: absolute;
+      background-color: rgb(0, 0, 0, 1.50);
+      z-index: 1;
+      top: -3px;
+      display: none;
+}
+
+/*Medidas de las distancias de los elementos
+del submenu*/
+.elementoSubmenu{
+      width: 100%;
+      height: 50px;
+      line-height: 50px
+}
+
+/*Aplicamos tama y estilo a las fuentes del 
+submenu*/
+.elementoSubmenu >a{
+      text-decoration: none;
+      color: #FFFF;
+      font-size: 1.60rem;
+      font-family: 'Roboto', sans-serif;
+      transition-property: color;
+      transition-duration: 0.5s;
+}
+
+/*Aplicamos el estilo de hover,a los elementos de texto
+del submenu*/
+.elementoSubmenu >a:hover {
+      color: #1CE5F2;
+}
+
+/*Multiselector de HTML, aca lo que hacemos es que esta regla 
+de estilo a los elementos HTML que tengan ID submenu siempre que sea
+descendiente de un elemento HTML que tenga la class ElementoMenu en estado 
+de Hover */
+.elementosMenu:hover #submenu{
+      display: block;
+}
+
+/*Fin de Submenu*/
+
+
+/*Elementos hijos que heredan de elementosMenu, asi 
+darle formato */
+.elementosMenu > a {
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      text-decoration: none;
+}
+
+/*Aplicamos un hover para hcer que los elementos sean mas iteractivos*/
+.elementosMenu > a:hover {
+      color: #1CE5F2;
+      transition-property:color;
+      transition-duration:0.6s;      
+}
+
+/*Formato de titulo central y principal (SuperClean)*/
+#tituloEncabezado{
+      font-size: 6rem;
+      /*background-color: white;*/
+      font-family: 'initial;', sans-serif;
+      color: #1CE5F2;
+      text-align: center;
+      position: relative;/*Nos permite centrar manualmente en vertical*/
+      top: 200px;
+      z-index: 4;
+      animation-name: fadeinTitle ;/*Animacaion que funde el un elemento*/
+      animation-duration: 4s;/*El tiempo que tarda en volver a su estado original */
+      animation-name: fadeinTitleMove;/*Animacion que mueve el elemento*/
+      animation-duration: 4s;/*El timepo que se tarde en mover el elemento*/
+}
+
+/*Subtitulo despues del titulo principal (SuperClean)*/
+#subtituloEncabezado{
+      font-size: 2rem;
+      /*background-color: olive;*/
+      font-family: 'Roboto ;', sans-serif;
+      color: #FFFFFF;
+      text-align: center;
+      z-index: 4;
+      position: relative;/*Nos permite centrar manualmente en vertical*/
+      margin-top: 425px;
+      animation-name: fadeinTitle;
+      animation-duration: 4s;
+      animation-name: fadeinSubTitleMove;
+      animation-duration: 4s;
+}
+
+/*Contenedor de las redes sociales*/
+#redesSociales { 
+      height: 43px;
+      width: 187px;
+      margin-left: auto;
+      margin-right: auto;
+      /*background-color: olive ;*/
+      position: relative;
+      top: 23%;
+      z-index: 4;  
+}
+
+/*Se define el tamaño de el contenedror que las sustituye ahora
+por las imagenes*/
+#redes{
+      height: 40px;
+      width: 41px;
+      margin-left: 6%;
+      margin-right: 5%;
+      overflow: hidden;
+      float: left;
+      position: relative;
+      top: 3%;
+      border-style: solid; color:#000000;
+      z-index: 4;
+}
+
+/*Medidas de los logos*/
+#redes img{
+      height: 100%;
+      width: 100%;  
+}
+
+/*Hover en los iconos de las redes*/
+#redes:hover{
+      color: #1CE5F2;
+      transition-duration: 0.4s;
+}
+
+/*Fin de Header*/
+
+
+/*Servicios*/
+
+/*Este contenedor es el general, contiene todo los elementos
+Hay que destacar que el color de fondo sera sustituido en la UF2
+*/
+#servicio{  
+      height: 913px;
+      width: 100%;/*Ancho al 100% de la pantalla a la que se visualice*/
+      /*Distancia de seccion a seccion*/ 
+      background-image: url("../media/Servicios.jpg");
+      background-repeat:no-repeat;
+}
+
+/*Comienzo de parallax*/
+.parallax{
+       width: 100%;
+       height: 600px;
+}
+/*Fin  de parallax*/
+
+
+/*Funete tamaños y centrados de Titulos de seccion*/
+.titulosPrincipales{
+      font-size: 3rem;
+      /*background-color: olive;*/
+      text-align: center;
+      font-family: 'Crimson Pro', serif;
+      color: #000000; 
+}
+
+/*Contenedor que tendra elementos de los logos y su descripcion
+*/
+#contenedorServicio{
+	  width: 65%;
+	  height: 50%;
+	  /*background-color: olive;*/
+	  margin-left: 19%;
+	  margin-top: 190px;
+	  overflow: hidden;
+     float: left;
+}
+
+/*Columnas que van dentro del contenedor (contenedorServicio)*/
+.columnaServicio{
+	 width: 20%;/*aplicamos medida relativas para que sea mas resposi*/
+      height: 100%;/**/
+      background-color: olivse;
+      /*border-style: solid;*/
+      float: left;
+      margin-left: 6%;
+      margin-right:6%;
+}
+
+ /*Contenedor de logos*/
+.contenedorLogos{
+      width: 100%;
+      height: 35%;
+      overflow: hidden;
+}
+
+/*Contenedor de los servicios*/
+.contenedorLogos > img{
+      width:93% ;
+      height:93%;
+      margin-left: 5%;  
+      border-radius: 60%;
+}
+
+
+/*Comienzo de filtro*/
+
+/*Aplicamos un efecto de hover con un efecto de filtro opaco*/
+.filtro1:hover{
+         filter: blur(5px);
+}
+/*Aplicamos un efecto de hover con un efecto de filtro de colores*/
+.filtro2:hover{
+        filter: hue-rotate(90deg);
+}
+
+/*Aplicamos un efecto de hover con un efecto de filtro de colores menos intensos*/
+.filtro3:hover{
+        filter: drop-shadow(16px 16px 20px red) invert(75%);
+}
+/*Fin de filtro*/
+
+
+
+
+/*Contenedor de texto*/
+.contenedorTexto{
+      width:100% ;
+      height:68%;
+      /*background-color: white;*/
+      overflow: hidden;
+}
+
+/*Subtitulos*/
+.subTitulosServ{
+	 text-align: center;
+	 margin-top: 20px;
+      font-family: 'Roboto', sans-serif;
+}
+
+/*Texto descriptivo de cada logo*/
+.fuenteDescrip{
+      text-align: center;
+      margin-top: 30px;
+      font-family: 'Roboto', sans-serif;
+      color: black;
+}
+
+/*Fin de Servicio*/
+
+
+/*Logros*/
+
+/*Contenedor que tiene todo el contenido de Logros*/
+#logros{
+	 height: 913px;
+	 width: 100%;
+	 /*margin-top: 653px;*/
+      background-image: linear-gradient(rgba(50, 50, 54, 0.2), rgb(50, 50, 54, 0.2)),url("../media/Logros.jpg");
+      overflow: hidden;    
+}
+
+.subtituloLogros{
+      font-size: 2rem;
+      /*background-color: olive;*/
+      font-family: 'Roboto ;', sans-serif;
+      color: #000000;
+      text-align: center;
+      margin-top: 27px;
+}
+
+/*Esto es un contenedor que tendra dentro lo que son los titulos
+de las pestañas*/
+#contenedorEtiquetasPestanas{
+      height: 6%;
+      width: 34%;
+      margin-left: 33%;
+      margin-right: 33%;
+      /*background-color: olive;*/
+      margin-top: -3%;
+      float: left;
+}
+
+/*Esta es una clase que hace referencai a las pestañas
+que seran licadas*/
+.pestanas{
+      height: 30px;
+      font-size: 2rem;
+      width: 151px;
+      margin-left: 1%;
+      /*background-color: white;*/
+      font-family: 'Roboto ;', sans-serif;
+      color: #000000;
+      margin-top: 25%;
+      float: left;
+      text-align: center;
+      padding-bottom: 35px;
+}
+
+/*Hover en las penstañas de opciones*/
+.pestanas:hover{
+      color: #1CE5F2;
+} 
+
+ /*Pestaña que estara marcada con este color de fondo*/
+.pestanaActiva{
+      color: #1CE5F2;
+      border-bottom-style: solid;
+}
+
+/*Contenedor que engloba los titulos de los diferentes logros*/
+.contenedorPestanas{
+      height: 60%;
+      width: 60%;
+      /*background-color:olive ;*/
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 195px;	
+      transition-property: color; 
+      transition-duration: 0.5s;
+}
+
+/*Cada imagen tendra un contenedor propio*/
+.contenedorImg{
+      height:39%;
+      width: 30%;  
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 2.9%;
+      float: left;
+      overflow: hidden;
+      border-style: solid;
+      border-color: #FFFF;ç
+}
+
+
+/*Creamos una animacion directamente en esta seccion, que da un efecto de escala ascendente*/
+@keyframes  animLogros{
+      from {transform: scale(0.24,0.24);};
+      tp{();transform: scale(1.1);};
+} 
+
+/*Clase que sera donde vamos aplicar la animacion*/
+.LogroAnimado{
+      animation-name: animLogros ;
+      animation-duration:1s ;
+}
+
+/*Medidas de las imagenes de fondo*/
+#contenedorImg > img{
+      width: 100%;
+      height: 100%;
+}
+
+/*Aplicamos una trasicion para las imgenes se vena menos rapido
+al pasar el raton*/
+.contenedorImg > img:hover{
+      transform: scale(1.2,1.2);
+      transition-property: transform;
+      transition-duration: 0.3s;
+}
+
+/*Clase que le da formato a los titulos de las imagenes*/  
+.titulosPestanas{
+      font-size: 2rem;
+      background-color: #ffff;
+      text-align: center;
+      margin-top: -1% ;
+}
+
+/*Termina la seccion de logros*/
+
+
+/* Nosotros*/
+
+/*Esto es un contenedor con medidas relativas
+que engloba a todo el contenido de esta seccion
+El color de fondo sera sustituido por una imagen en la UF2*/
+#nosotros{
+      height: 913px;
+      width: 100%;
+      background-color: #FFFFFF;
+      background-image: url("../media/Nosotros.jpg");
+}
+
+/*Otro contenedor de que tiene al siguinte contenedor*/
+#contenedorDescripcion{
+      height: 70%;
+      width: 85%;
+     /*background-color: white;*/
+      overflow: hidden;
+      position: relative;
+      left: 7%;
+      margin-top: 3%;
+}
+
+/*Otro contenedor encargado de contener la descripcion
+de la empresa*/
+#subcontenedorTexto{
+      height: 75%;
+      width: 51%;
+      margin-left: 45%;
+      background-color: #c9c9c9;
+      overflow: hidden;
+      position: relative;
+      margin-left: 48%;
+      margin-top: -31%; 
+}
+
+/*Contenedor del video*/
+#conteneVideo{
+      height: 83%;
+      width: 40%;
+      /*background-color: olive;*/
+      overflow: hidden;
+      position: relative;
+      margin-left: 3%;
+      margin-top: 7%; 
+
+}
+/*Le damos formato al video incrustado*/
+.videoIframe{
+      width: 100%;
+      height: 100%;
+      position: relative;
+}
+
+
+/*Texo de el contenido descriptivo*/
+.fuenteTexNosotros{
+	 font-size: 2rem;
+      padding: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-family: 'Roboto ;', sans-serif;
+      color: #000000;
+}
+/*Fin de Nosotros*/
+
+
+
+
+/*Comioenzo de galaeria*/
+
+/*Contenedor de galeria*/
+#galeria{
+      height: 913px;
+      width: 100%;
+      background-image: url("../media/FondoGaleria.jpg");
+      overflow: hidden;
+}
+
+/*Contenedor de las images de la galeria*/
+#contenedorGaleria{
+      height: 79%;
+      width: 80%;
+      float: left;
+      position: relative; 
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 1%;
+}
+
+/*Contenedor de las imagenes*/
+.conteImg{
+      width: 24%;
+      height: 35%;
+      margin-left: 5%;
+      margin-right: 4%;
+      margin-top: 1%;
+      float: left;
+      overflow: hidden;
+      border-radius: 12px;
+}
+
+/*Aplicamos un efecto de hover*/
+.conteImg:hover{
+      transform: scale(1.2,1.2);
+      transition-property: transform;
+      transition-duration: 0.3s;
+      box-shadow: 0px 7px 4px 0px #1CE5F2;/* Formato de fondo para las imagnes, para que sea mas interactivo */
+      cursor: pointer;/*Para que el puntero cambie de forma*/
+}
+
+/*Fin de galeria*/
+
+
+/*Comienzo de modal de Imgenes*/
+
+/*Modal de la galeria*/
+#modalLightboxGale{
+      height: 100vh;
+      width: 100VW;
+      background-color: rgb(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0px;
+      display: none;
+      z-index: 5;
+}
+
+/*Contenedor de el anucnio de bienvenida 
+y del boton*/
+#imageToShow{
+      width:70vw;
+      height:auto;
+      position: absolute;
+      top: 12%;
+      left: 16%;
+      transform: translate(-2%, -2%);
+      /*padding: 4%;*/
+      text-align: center;  
+}
+
+/*Class creada desde el 'JavaScript' que 
+dara formato a la imagen que contenga*/
+.FormatoImgModalG{
+      width: 100%;
+      height: auto;
+      border-radius: 50px;
+}
+
+/*Botones extraidos de fontawesome*/
+.lbButtons{
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 5px;
+      background-color: #ffff;
+}
+
+/*Aplicamos un hover para darle un efecto de color blanco
+a un colo azul*/
+.lbButtons:hover{
+      border-color: #1CE5F2;
+}
+
+/*Clase que controla la posicion de distancia a la derecha*/
+.lbbright{
+      right: 20px;
+}
+
+/*Clase que controla la posicion de distancia a la izquierda*/
+.lbbleft{
+      left: 20px;
+}
+
+/*Le damos tamaño de fuente a los iconos y un color 
+negro*/
+.lbButtons > i{
+      font-size: 4rem;
+      color:black;
+} 
+
+/*Le damos un efecto a los iconos de un color negro 
+a un color azul*/
+.lbButtons:hover i{
+      color: #1CE5F2;
+}
+
+/*fin de modal de Imgenes*/
+
+
+
+/*Encuentranos*/
+
+/*Es el inicio de todo el contenido de la seccio*/
+#encuentranos{
+      height: 800px;
+      width: 100%;
+      background-image: url("../media/Emcuentranos.jpg");
+}
+
+/*Esto es un contenedor que tendra dentron
+ al de tipo form y a otro contenedor
+ que sera el de informacion */
+#contenedorCulumnas{
+      height: 650px;
+      width: 720px;
+      background-color: #ffff;
+      margin-left: 56%;
+      margin-right: auto;
+      overflow: hidden;
+      position: relative;
+      top: 53px;
+}
+
+/*Comienzo de contenedor de menuAcordeon */
+
+/*Contenedor de todos los elementos del acordeon*/
+#contAcordeon{
+       height: 72%;
+       width: 43%;
+       background-color: white;
+       overflow: hidden;
+       position: absolute;
+       left: 5%;
+       margin-top: 2.5%;
+}
+/*Titulo encabezado del acordeon*/
+.tituloAcordeon{
+      text-align: center;
+
+}
+/*Boton la cual resivira el click*/
+.BonotesActivos{
+    width: 100%;
+    background-color: bisque;
+    color: black;
+    cursor: pointer;
+    font-size: 19px;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 20px;
+}
+/*Clase que se le es asignada bonton que en ese momento se 
+clique*/
+.active, .BonotesActivos:hover{
+     background-color: #1CE5F2;
+}
+
+/*Clase que controla el panel que se abre y muestra el contenido*/
+.panel{
+      padding: 0px 20px;
+      overflow: hidden;
+      background-color: cornsilk;
+      display: none;
+      overflow: hidden;
+}
+
+
+/*Finaliza el menu de acordeon*/
+
+
+
+/*Dentro de este contendor de tipo Formulario iran
+los elementos de tipo imput, tex, etc. */
+#contenedorFormulario{
+      height: 550px;
+      width: 321px;
+      position: relative;
+      margin-top: 25px;
+      margin-left: 353px;
+      background-color: #ffff;
+      overflow: hidden;
+}
+
+ /*Le da formato a los titulos de los formularios*/
+.nombresForm{
+      font-size: 1rem;
+      margin-top: 5%;
+      font-family: 'Roboto ;', sans-serif;
+      color: #000000;
+}
+
+
+/*Aca comienza el toolTip*/
+
+/*Clase que funciona como contenedor de los demas 
+elementos*/
+.detallesCamp{
+       opacity: 0;
+       transition: all 0.3s;
+       position: absolute;
+       margin-top: 14px;
+       background-color: cornsilk;
+       border: 1px ;
+       border-color: var(--gray-light);;
+       border-style:solid ;
+       padding: 18px;
+       border-radius: 4px;
+}
+
+/*Le damos tamaño y formato al h2 que contiene*/
+.detallesCamp h2{
+       font-size: 14px;
+       margin: 0;
+      padding: 5px; ;
+}
+
+
+/*Le damos tamaño y formato al parrafo que contiene*/
+.detallesCamp p{
+       margin-top: 2px;
+       font-size: 12px;
+       margin-bottom: 0;
+       color:gray;
+}
+
+/*Activamos el hover para que cuando se pase por el contenedor 
+de nombresForm la opaciti que esta en 0 pase a 1 y se vea el 
+tip */
+.nombresForm:hover .detallesCamp{
+      opacity: 1;
+}
+
+
+/*Aca finaliza el toolTip*/
+
+
+/*Campo donde escribe el usuario*/
+.apartadosForm{
+      height: 32px;
+      width: 305px;
+      position: relative;
+      top: 1px ;
+      float: left;
+      border-style: 2px;
+      overflow: hidden;
+}
+
+/*Este contenedor antes mencionado es el que se encarga 
+de contener elementos de informacion*/
+#contenedorInfo{
+      height: 450px;
+      width: 321px;
+      margin-top: -76%;
+      margin-left: 20px;
+      background-color: #ffff;
+      overflow: hidden;
+      float: left;   
+}
+
+/*Este estilo afectara a los hijos 
+de el contenedor de arriba (contenedorInfo)*/
+#contenedorInfo > h3{
+text-align: center;
+      font-size: 1rem;
+      font-family: 'Roboto ', sans-serif;
+      color: #000000;
+      padding: 10px;
+      line-height: 60px;
+}
+
+ /*Estilos de fuente y tamaño de el apartado de informacion*/
+.infoTienda{
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'Roboto ', sans-serif;
+      color: #000000;
+}
+
+/*Es el boton que pertenece al contenedor de tipo Form*/
+#botonEnviar{
+      height: 40px;
+      width: 305px;
+      position: relative;
+      top: 1px ;
+      float: left;
+      overflow: hidden; 
+}
+
+/*Fin de encuentranos Encuentranos */
+
+
+/*Comienzo de modal de bienvenida
+con una propiedad por unidad de ancho
+y largo de 100%de la pantalla
+*/
+#modalEncuentranos{
+      height: 100vh;
+      width: 100vw;
+      background-color: rgb(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0px;
+      display: none;
+      z-index: 5;
+}
+
+/*Contenedor de el anucnio de bienvenida 
+y del boton*/
+#modelBoxR{
+      width:50%;
+      height:35%;
+      background-color: white;
+      position: absolute;
+      top: 28%;
+      left: 25%;
+      transform: translate(-1%,-1%);
+      padding: 4%;
+      text-align: center;
+      border-radius: 6%;
+}
+
+/*Le damos formato al h1 del titulo del modal*/
+#modelBoxR>h1{
+      font-size: 2rem;
+      font-family: 'initial;', sans-serif;
+      font-weight: normal;
+      margin-bottom: 4%;
+}
+
+/*Le damos formato a los parrafos de el modal*/
+#modelBoxR>p{
+      font-size: 1.16rem;
+      text-align: center;
+      font-weight: normal;
+      font-family: 'Roboto ', sans-serif;
+}
+
+/*Le damos medidas y formatos al boton
+de el modal*/
+#modelBoxR> button{
+      font-family: 'initial;', sans-serif;
+      font-size: 1rem;
+      padding: 2%  3%;
+      background-color:  black;
+      border-radius: 14%;
+      color: #ffff;
+}
+
+/*Le hacemos un efecto de hover sobre el boton
+del modal*/
+#modelBoxR> button:hover{
+      color: #ffff;
+      background-color: #1CE5F2;
+}
+
+
+
+/*Footer */
+
+/*Es el pie de pagina
+que contiene las redes sociales que comparte con 
+el encabezado*/
+#pie{
+      height:158px;
+      width: 100%;
+      background-color: black; 
+      position: relative;
+}
+
+/*Es el contenedor que contine el texto lincable de
+el footer*/
+#contenedorTexto{
+      text-align: center;
+      margin-top: 3%; 
+}
+
+/*Estilos de fuente y tamaño que afectaran a los hijos de 
+del contenedor ("contenedorTexto")*/
+#contenedorTexto > h3 {
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'initial;', sans-serif;
+      text-decoration: none;
+}
+/*Fin de footer */
+
+
+/*Creacion de una animacion*/
+@keyframes fadeinTitle{
+       0% {opacity: 0;}
+      75% {opacity: 1;}
+     100% {opacity: 1;}
+}
+
+/*Creacion de una animacion que 
+hace un efecto de movimiento en el titulo principal*/
+@keyframes fadeinTitleMove{
+       0% {opacity: 0; top:100px;}
+      75% {opacity: 1; top:100px;}
+     100% {opacity: 1; top:200px;}
+}
+
+/*Creacion de una animacion que hace un efecto en el subtitulo principal */
+@keyframes fadeinSubTitleMove{
+       0% {opacity: 0; top:200px;}
+       75% {opacity: 1;top:200px;}
+     100% {opacity: 1; top:200px;}
+}
